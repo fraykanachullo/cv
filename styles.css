@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #2d5016;
+    --color-secondary: #1f3a0a;
+    --color-accent: #8b4513;
+    --color-light: #f5f5f5;
+    --color-text: #333;
+    --color-text-light: #666;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-light);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== SIDEBAR ==================== */
+.sidebar {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.4em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.position {
+    font-size: 0.85em;
+    text-align: center;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 12px;
+    width: 100%;
+}
+
+.sidebar-section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.85em;
+}
+
+.contact-item .icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.contact-item p {
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 6px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(3px);
+}
+
+.language-list p {
+    font-size: 0.85em;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.info-text {
+    font-size: 0.85em;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+/* ==================== CONTENIDO PRINCIPAL ==================== */
+.content {
+    padding: 35px 30px;
+    overflow-y: auto;
+}
+
+.main-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 5px;
+}
+
+.section-text {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    font-size: 0.9em;
+}
+
+/* ==================== EDUCACIÓN ==================== */
+.education-item {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.education-item:last-child {
+    border-bottom: none;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 3px;
+}
+
+.education-header h3 {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.date {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 15px;
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.education-place {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+/* ==================== HABILIDADES COMPACTAS ==================== */
+.skills-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-row {
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.skill-row strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ==================== PROYECTOS ==================== */
+.project-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--color-light);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 3px;
+}
+
+.project-item h3 {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 3px;
+}
+
+.tech-tag {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.project-item p {
+    font-size: 0.85em;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 3px 0;
+}
+
+/* ==================== INTERESES ==================== */
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.interest-tag {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.interest-tag:hover {
+    transform: translateY(-1px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .sidebar {
+        padding: 25px 15px;
+        border-bottom: 3px solid var(--color-accent);
+    }
+
+    .profile-photo {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 15px;
+    }
+
+    .name {
+        font-size: 1.2em;
+    }
+
+    .content {
+        padding: 25px 20px;
+    }
+
+    .section-title {
+        font-size: 1.05em;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 15px 12px;
+    }
+
+    .name {
+        font-size: 1em;
+    }
+
+    .section-title {
+        font-size: 0.95em;
+    }
+
+    .profile-photo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .sidebar {
+        padding: 20px 12px;
+    }
+}
+
+/* ==================== IMPRESIÓN (PDF) ==================== */
+@media print {
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        min-height: auto;
+    }
+
+    .sidebar {
+        padding: 25px 15px;
+        page-break-after: avoid;
+    }
+
+    .content {
+        padding: 25px 25px;
+        page-break-inside: avoid;
+    }
+
+    .main-section {
+        page-break-inside: avoid;
+        margin-bottom: 15px;
+    }
+
+    .project-item,
+    .education-item {
+        page-break-inside: avoid;
+    }
+
+    @page {
+        size: A4;
+        margin: 5mm;
+    }
+
+    /* Ajustes para que quepa en 2 hojas */
+    .section-title {
+        margin-bottom: 8px;
+    }
+
+    .main-section {
+        margin-bottom: 12px;
+    }
+
+    .profile-photo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .sidebar-section {
+        margin-bottom: 15px;
+    }
+}
